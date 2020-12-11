@@ -1,10 +1,15 @@
-#ifndef Z80CPU_H_
-#define Z80CPU_H_
+#ifndef CPU_H_
+#define CPU_H_
 
 #pragma once
 
 #define LOBYTE(w) ((unsigned __int8)(w))
 #define HIBYTE(w) ((unsigned __int8)(((unsigned __int16)(w) >> 8) & 0xFF))
+
+ /*byte In_mem	(void* param, ushort address);
+ void Out_mem (void* param, ushort address, byte data);
+ byte In_io	(void* param, ushort address);
+ void Out_io (void* param, ushort address, byte data);*/
 
 class CPU
 {
@@ -46,6 +51,15 @@ protected:
 	void Processing_E0_EF(unsigned __int8 opcode, unsigned __int8 prefix = 0);
 	void Processing_F0_FF(unsigned __int8 opcode, unsigned __int8 prefix = 0);
 public:
+	/*CPU(AddressSpace & bus): _bus(bus) {
+	_context.memRead = In_mem;
+	_context.memWrite = Out_mem;
+	_context.ioRead = In_io;
+	_context.ioWrite = Out_io;
+	_context.ioParam = this;
+	_context.memParam = this;
+};*/
+	void save_state_sna(const char * filename);
 	static void LD16(unsigned __int16& reg, unsigned __int16 val);
 	static void LD8LO(unsigned __int16& reg, unsigned __int8 val);
 	static void LD8HI(unsigned __int16& reg, unsigned __int8 val);

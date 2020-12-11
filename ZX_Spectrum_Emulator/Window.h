@@ -5,8 +5,8 @@
 #include <memory>
 #include "Memory.h"
 #include "IO.h"
-#include "Z80CPU.h"
 #include "AudioDriver.h"
+#include "CPU.h"
 
 class Window
 {
@@ -38,7 +38,7 @@ protected:
 	RAM ram { 16 };
 	IO io { &_adrv };
 	AddressSpace system_bus { ram, rom, io };
-	CPU cpu { system_bus };
+	CPU cpu (unsigned __int8 *pram);
 };
 
 

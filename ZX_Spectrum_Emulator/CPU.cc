@@ -1,7 +1,8 @@
-#include "Z80CPU.h"
 #include <fstream>
 #include <cstdint>
 #include <vector>
+#include "CPU.h"
+#include <SDL2/SDL.h>
 
 #pragma pack(push, 1)
 struct SNA_Header
@@ -68,22 +69,22 @@ struct Z80_Header_2
 };
 #pragma pack(pop)
 
-byte In_mem(void* param, ushort address)
+/*byte In_mem(void* param, ushort address)
 {
-	return reinterpret_cast<Z80CPU*>(param)->_bus.read(address);
+	return reinterpret_cast<CPU*>(param)->_bus.read(address);
 }
 void Out_mem(void* param, ushort address,byte data)
 {
-	reinterpret_cast<Z80CPU*>(param)->_bus.write(address, data);
+	reinterpret_cast<CPU*>(param)->_bus.write(address, data);
 }
 byte In_io(void* param, ushort address)
 {
-	return reinterpret_cast<Z80CPU*>(param)->_bus.read(address,true);
+	return reinterpret_cast<CPU*>(param)->_bus.read(address,true);
 }
 void Out_io(void* param, ushort address,byte data)
 {
-	reinterpret_cast<Z80CPU*>(param)->_bus.write(address, data,true);
-}
+	reinterpret_cast<CPU*>(param)->_bus.write(address, data,true);
+}*/
 CPU::CPU(unsigned __int8 *pram)
 {
 	ram = pram;
@@ -116,7 +117,7 @@ void CPU::save_state_sna(const char *filename)
 	SNA_Header hdr;
 	std::vector<uint8_t> data;
 	data.resize(16384 * 3);
-	for (unsigned memptr = 16384; memptr < 65536; memptr++)
+	/*for (unsigned memptr = 16384; memptr < 65536; memptr++)
 		data[memptr - 16384] = _bus.read(memptr);
 	hdr.I = _context.I;
 	hdr.HL1 = _context.R2.wr.HL;
@@ -136,8 +137,7 @@ void CPU::save_state_sna(const char *filename)
 	hdr.FE = 0;
 	hdr.SP -= 2;
 	data[hdr.SP - 16384] = _context.PC & 0x00ff;
-	data[hdr.SP - 16384 + 1] = _context.PC >> 8;
-
+	data[hdr.SP - 16384 + 1] = _context.PC >> 8;*/
 	std::fstream sna;
 	sna.open(filename, std::ios::out | std::ios::binary);
 	sna.write(reinterpret_cast<const char *>(&hdr), sizeof(hdr));

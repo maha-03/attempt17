@@ -15,7 +15,7 @@ Window::Window(int width, int height)
 {
 	_window = std::shared_ptr<SDL_Window>(
 			SDL_CreateWindow(
-					"Ёмул€тор ZX Spectrum",
+					"Emulator ZX Spectrum",
 					SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 					width, height,
 					SDL_WINDOW_SHOWN),
