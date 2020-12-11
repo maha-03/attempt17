@@ -1,0 +1,11 @@
+prefix=/home/unyuu/libspectrum-1.4.4-mingw
+exec_prefix=${prefix}
+libdir=/home/unyuu/libspectrum-1.4.4-mingw/lib64
+includedir=${prefix}/include
+
+Name: libspectrum
+Description: libspectrum is a library which is designed to make the input and output of ZX Spectrum emulator files slightly easier than it would be otherwise.
+URL: http://fuse-emulator.sourceforge.net/libspectrum.php
+Version: 1.4.4
+Cflags: -I${includedir}
+Libs: -L${libdir} -lspectrum
