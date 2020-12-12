@@ -24,16 +24,13 @@ Window::Window(int width, int height)
 		throw std::runtime_error(
 				std::string("Window creation failed: ") +
 				SDL_GetError());
-
 	_renderer = std::shared_ptr<SDL_Renderer>(
 			SDL_CreateRenderer(_window.get(), -1, SDL_RENDERER_ACCELERATED),
 			SDL_DestroyRenderer);
 	if (_renderer == nullptr)
 		throw std::runtime_error(
 				std::string("Renderer creation failed: ") +
-				SDL_GetError());
-}
-
+				SDL_GetError());}
 static std::map<SDL_Scancode, std::pair<unsigned, unsigned>> s_keymap {
 	{ SDL_SCANCODE_Q, { 5, 0 } },
 	{ SDL_SCANCODE_W, { 5, 1 } },

@@ -25,9 +25,7 @@
 								<option id="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level.1701072158" name="Optimization Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.optimization.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level.252080604" name="Debug Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" valueType="enumerated"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.compiler.option.include.paths.1408570874" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Work\eclipse\eclipse-cpp-java-2020.09.4-64\mingw64\lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\1234\git\zx_spectrum\ZX_Spectrum_Emulator\libspectrum\include&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Work\eclipse\eclipse-cpp-java-2020.09.4-64\libspectrum\lib64&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\MinGW\include&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.1162433537" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.c++17" valueType="enumerated"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1852371112" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -43,12 +41,10 @@
 									<listOptionValue builtIn="false" value="mingw32"/>
 									<listOptionValue builtIn="false" value="SDL2main"/>
 									<listOptionValue builtIn="false" value="SDL2"/>
-									<listOptionValue builtIn="false" value="spectrum"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.103781067" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Work\eclipse\eclipse-cpp-java-2020.09.4-64\libspectrum\lib64&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\1234\git\zx_spectrum\ZX_Spectrum_Emulator\libspectrum\lib32&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Work\eclipse\eclipse-cpp-java-2020.09.4-64\mingw64\lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\MinGW\lib&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\MinGW\bin&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.367145763" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -103,18 +99,15 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.release.1693146807" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.release"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.release.1075695542" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.release">
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.libs.565983540" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
-									<listOptionValue builtIn="false" value="mingw64"/>
+									<listOptionValue builtIn="false" value="mingw32"/>
 									<listOptionValue builtIn="false" value="SDL2main"/>
 									<listOptionValue builtIn="false" value="SDL2"/>
 									<listOptionValue builtIn="false" value="spectrum"/>
-									<listOptionValue builtIn="false" value="SFML"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="gnu.cpp.link.option.paths.1871407768" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;C:\Users\Work\eclipse\eclipse-cpp-java-2020.09.4-64\libspectrum\lib32&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\MinGW\mingw32\lib&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;C:\MinGW\mingw32\bin&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Work\eclipse\eclipse-cpp-java-2020.09.4-64\libspectrum\lib64&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Work\eclipse\eclipse-cpp-java-2020.09.4-64\mingw64\lib&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\Work\eclipse-workspace\SFML-2.5.1\lib&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2147210557" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

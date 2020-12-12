@@ -3,7 +3,6 @@
 #include <vector>
 #include "CPU.h"
 #include <SDL2/SDL.h>
-
 #pragma pack(push, 1)
 struct SNA_Header
 {
@@ -68,8 +67,7 @@ struct Z80_Header_2
 	uint8_t fsck_those_bytes[4];
 };
 #pragma pack(pop)
-
-/*byte In_mem(void* param, ushort address)
+byte In_mem(void* param, ushort address)
 {
 	return reinterpret_cast<CPU*>(param)->_bus.read(address);
 }
@@ -84,7 +82,7 @@ byte In_io(void* param, ushort address)
 void Out_io(void* param, ushort address,byte data)
 {
 	reinterpret_cast<CPU*>(param)->_bus.write(address, data,true);
-}*/
+}
 CPU::CPU(unsigned __int8 *pram)
 {
 	ram = pram;
@@ -153,21 +151,7 @@ void CPU::Step()
 		prefix = opcode;
 		opcode = ram[PC++];}
 	if (opcode >= 0x00 && opcode <= 0x0F) Processing_00_0F(opcode, prefix);
-	else if (opcode >= 0x10 && opcode <= 0x1F) Processing_10_1F(opcode, prefix);
-	else if (opcode >= 0x20 && opcode <= 0x2F) Processing_20_2F(opcode, prefix);
-	else if (opcode >= 0x30 && opcode <= 0x3F) Processing_30_3F(opcode, prefix);
-	else if (opcode >= 0x40 && opcode <= 0x4F) Processing_40_4F(opcode, prefix);
-	else if (opcode >= 0x50 && opcode <= 0x5F) Processing_50_5F(opcode, prefix);
-	else if (opcode >= 0x60 && opcode <= 0x6F) Processing_60_6F(opcode, prefix);
-	else if (opcode >= 0x70 && opcode <= 0x7F) Processing_70_7F(opcode, prefix);
-	else if (opcode >= 0x80 && opcode <= 0x8F) Processing_80_8F(opcode, prefix);
-	else if (opcode >= 0x90 && opcode <= 0x9F) Processing_90_9F(opcode, prefix);
-	else if (opcode >= 0xA0 && opcode <= 0xAF) Processing_A0_AF(opcode, prefix);
-	else if (opcode >= 0xB0 && opcode <= 0xBF) Processing_B0_BF(opcode, prefix);
-	else if (opcode >= 0xC0 && opcode <= 0xCF) Processing_C0_CF(opcode, prefix);
-	else if (opcode >= 0xD0 && opcode <= 0xDF) Processing_D0_DF(opcode, prefix);
-	else if (opcode >= 0xE0 && opcode <= 0xEF) Processing_E0_EF(opcode, prefix);
-	else if (opcode >= 0xF0 && opcode <= 0xFF) Processing_F0_FF(opcode, prefix);}
+}
 void CPU::Processing_00_0F(unsigned __int8 opcode, unsigned __int8 prefix)
 {
 	switch (opcode)

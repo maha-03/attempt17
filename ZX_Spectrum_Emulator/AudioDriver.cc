@@ -1,4 +1,5 @@
 #include "AudioDriver.h"
+#include <SDL2/SDL.h>
 
 void real_audiodriver_cb(void * data, Uint8 * stream, int len)
 {
